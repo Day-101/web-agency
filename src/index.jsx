@@ -15,25 +15,25 @@ const App = () => {
   return (
   <Router>
     <ThemeContextProvider>
-      <Navbar />
-    
-      <main>
-        <Switch>
-          <Route path="/" exact>
-            <Home />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/works" exact>
-            <Works />
-          </Route>
-          <Route path="/works/:slug">
-            <WorkDetail />
-          </Route>
-        </Switch>
-      </main>
-
+      <div className='container'>
+        <Navbar />
+        <main>
+          <Switch>
+            <Route path="/" exact>
+              <Home />
+            </Route>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/works" exact>
+              <Works />
+            </Route>
+            <Route path="/works/:slug">
+              <WorkDetail />
+            </Route>
+          </Switch>
+        </main>
+      </div>
     </ThemeContextProvider>
   </Router>
 )};

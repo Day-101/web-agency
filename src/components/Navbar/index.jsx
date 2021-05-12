@@ -9,7 +9,7 @@ const Navbar = () => {
 
   return (
     <nav className={theme ? 'contenu light' : 'contenu dark'}>
-      <BtnToggle />
+      <h1>Web Agency</h1>
       <ul>
         <li>
           <Link to="/">Home</Link>
@@ -21,6 +21,7 @@ const Navbar = () => {
           <Link to="/works">Works</Link>
         </li>
       </ul>
+      <BtnToggle />
     </nav>
   )
 }
