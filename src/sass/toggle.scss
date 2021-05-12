@@ -1,0 +1,44 @@
+.btn-toggle{
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: #191a1b;
+  border: 1px solid #191a1b;
+  color: #eff2f5;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-toggle.goLight{
+  background: #191a1b;
+  color: #eff2f5;
+}
+.btn-toggle.goDark{
+  background: #eff2f5;
+  color: #191a1b;
+}
+.contenu{
+  font-size: 20px;
+  text-align: center;
+  padding: 20px 4vw;
+  height: 100vh;
+  color: #191a1b;
+  background: #eff2f5;
+  transition: all 0.2s ease-in-out;
+}
+
+.contenu.dark{
+  color: #eff2f5;
+  background: #191a1b;
+}
+
+.contenu.light{
+  color: #191a1b;
+  background: #eff2f5;
+}
