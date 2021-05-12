@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import {ThemeContext} from 'context/ThemeContext';
 import { Link } from 'react-router-dom';
+import BtnToggle from 'components/BtnToggle';
 
 const Navbar = () => {
 
@@ -8,6 +9,7 @@ const Navbar = () => {
 
   return (
     <nav className={theme ? 'contenu light' : 'contenu dark'}>
+      <BtnToggle />
       <ul>
         <li>
           <Link to="/">Home</Link>

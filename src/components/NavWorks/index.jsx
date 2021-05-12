@@ -1,25 +1,46 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { v4 as uuid } from 'uuid';
 
 const NavWorks = () => {
 
-  const slugify = (str) => {
+  const slugify = (str, index) => {
     str = str.toLowerCase().replace(/[^\w+]+/g, "-");
-    return str;
+    return `${str}_${index}`;
   }
 
   const projects = require('data/projects.json');
-  console.log('coucou');
+  const [cardMode, setCardMode] = React.useState(false);
+
+  const loadContent = (project, index) => {
+    if (cardMode) {
+      return (
+        <li key={index} className="card">
+          <p>{project.client}</p>
+          <p>{project.title}</p>
+          <Link to={`/works/${slugify(project.title, index)}`}>Read more</Link>
+        </li>
+      )
+    } else {
+      return (
+        <li key={index}>
+          <Link to={`/works/${slugify(project.title, index)}`}>{project.client}</Link>
+        </li>
+      )
+    }
+  }
+
+
+
   return (
   <nav>
+    <button onClick={() => setCardMode(!cardMode)}>Change mode</button>
+
     <ul>
-      {projects.map((project) =>
-        <li key={uuid()}>
-          <Link to={`/works/${slugify(project.title)}`}>{project.title}</Link>
-        </li>
+      {projects.map((project, index) =>
+        loadContent(project, index)
       )}
     </ul>
+    
   </nav>
   )
 }
