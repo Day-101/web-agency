@@ -15,9 +15,8 @@ const App = () => {
   return (
   <Router>
     <ThemeContextProvider>
-      <div className='container'>
         <Navbar />
-        <main>
+        <main className="main-content">
           <Switch>
             <Route path="/" exact>
               <Home />
@@ -33,7 +32,6 @@ const App = () => {
             </Route>
           </Switch>
         </main>
-      </div>
     </ThemeContextProvider>
   </Router>
 )};

@@ -1,57 +1,68 @@
-$primary:#eff2f5;
-$primary-dark:#191a1b;
+$white:#f5f5f7;
+$pure-white:#fff;
+$dark:#333;
+$pure-dark:#000;
 
 .btn-toggle{
-  width: 35px;
-  height: 35px;
-  background: $primary-dark;
-  border: 1px solid $primary-dark;
-  color: $primary;
-  font-size: 10px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
+  height: 20px;
   transition: all 0.2s ease-in-out;
 
  &.goLight{
-  background: $primary-dark;
-  color: $primary;
+  // background: $dark;
+  // color: $white;
  }
  &.goDark{
-  background: $primary;
-  color: $primary-dark;
+  // background: $white;
+  // color: $dark;
   }
 }
 .contenu{
-  color: $primary-dark;
-  background: $primary;
   transition: all 0.5s ease-in-out;
 
+  #brand{
+    height: 20px;
+    margin-right: 2em;
+  }
   ul{
     list-style-type: none;
     display: flex;
+    flex-grow: 1;
+  }
+
+  .navbar{
+    a{
+      font-size: 14px;
+      text-decoration: none;
+      margin-right: 2em;
+    }
   }
 
   &.dark{
-  color: $primary;
-  background: $primary-dark;
+  color: $white;
+  background: $dark;
     
     a{
-      color: $primary;
+      color: $white;
       text-decoration: none;
     }
   }
   &.light{
-    color: $primary-dark;
-    background: $primary;
+    color: $dark;
+    background: $white;
     
+
     a{
-      color: $primary-dark;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 0 2em;
+      color: $dark;
+      
+      &:hover{
+        color: $pure-dark;
+      }
     }
   }
+}
+
+.main-content{
+  flex-grow: 1;
+  display: flex;
 }

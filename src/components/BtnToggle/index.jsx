@@ -6,9 +6,7 @@ const BtnToggle = () => {
   const {toggleTheme, theme} = useContext(ThemeContext)
 
   return (
-    <div onClick={toggleTheme} className={theme ? 'btn-toggle goLight' : 'btn-toggle goDark'}>
-      {theme ? 'Dark' : 'Light'}
-    </div>
+    <img src={`images/${theme ? 'moon-solid' : 'sun-solid'}.svg`} alt="Dark mode"  onClick={toggleTheme} className={theme ? 'btn-toggle goLight' : 'btn-toggle goDark'} />
   );
 }
 

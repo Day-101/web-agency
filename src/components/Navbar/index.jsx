@@ -8,21 +8,27 @@ const Navbar = () => {
   const {theme} = useContext(ThemeContext)
 
   return (
-    <nav className={theme ? 'contenu light' : 'contenu dark'}>
-      <h1>Web Agency</h1>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-        <li>
-          <Link to="/works">Works</Link>
-        </li>
-      </ul>
-      <BtnToggle />
-    </nav>
+    <div className={theme ? 'contenu light' : 'contenu dark'}>
+      <div className="full-width">
+        <nav className="container navbar">
+          <Link to="/">
+            <img id='brand' src={`images/${theme ? 'github-brands' : 'github-brands-night'}.svg`} alt="" />
+          </Link>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/works">Works</Link>
+            </li>
+          </ul>
+          <BtnToggle />
+        </nav>
+      </div>
+    </div>
   )
 }
 

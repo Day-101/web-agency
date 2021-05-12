@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import {ThemeContext} from 'context/ThemeContext';
 
 const NavWorks = () => {
+  const {theme} = useContext(ThemeContext)
 
   const slugify = (str, index) => {
     str = str.toLowerCase().replace(/[^\w+]+/g, "-");
@@ -15,33 +17,31 @@ const NavWorks = () => {
     if (cardMode) {
       return (
         <li key={index} className="card">
-          <p>{project.client}</p>
+          <h3>{project.client}</h3>
           <p>{project.title}</p>
-          <Link to={`/works/${slugify(project.title, index)}`}>Read more</Link>
+          <Link className="btn-mini" to={`/works/${slugify(project.title, index)}`}>Consulter</Link>
         </li>
       )
     } else {
       return (
         <li key={index}>
-          <Link to={`/works/${slugify(project.title, index)}`}>{project.client}</Link>
+          <h3><Link to={`/works/${slugify(project.title, index)}`}>{project.client}</Link></h3>
         </li>
       )
     }
   }
 
-
-
   return (
-  <nav>
-    <button onClick={() => setCardMode(!cardMode)}>Change mode</button>
-
-    <ul>
-      {projects.map((project, index) =>
-        loadContent(project, index)
-      )}
-    </ul>
-    
-  </nav>
+    <div className={theme ? 'contenu light' : 'contenu dark'}>
+      <div className="full-width">
+        <nav className="container navWorks">
+          <button onClick={() => setCardMode(!cardMode)}>Wahou !</button>
+          <ul>
+            {projects.map((project, index) => loadContent(project, index))}
+          </ul>
+        </nav>
+      </div>
+    </div>
   )
 }
 

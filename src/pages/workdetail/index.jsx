@@ -7,11 +7,15 @@ const WorkDetail = (props) => {
 	const project = require('data/projects.json')[id];
 
 	return (
-		<div>
-			<h1>{project.title}</h1>
-			<p>{project.content}</p>
-			<p>{project.client}</p>
-		</div>
+		// <div className={theme ? 'flex-context contenu light' : ' flex-context contenu dark'}>
+		// 	<div className="full-width">
+				<div className="main container">
+					<h2>{project.title}</h2>
+					<h3>{project.client}</h3>
+					<p>{project.content}</p>
+				</div>
+		// 	</div>
+		// </div>
 	)
 }
 export default WorkDetail;
