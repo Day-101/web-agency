@@ -5,10 +5,19 @@ export const ThemeContext = createContext();
 
 // composant qui va apporter ThemeContext. (props) renvoi à nos composants enfants qu'on englobera
 const ThemeContextProvider = (props) => {
-  const [theme, setTheme] = useState(true); //on peut y déclarer un str ou un objet (mais faudra l'itérer ensuite)
+  
+  let darkMode = localStorage.getItem('darkMode')
+  if (darkMode === "true" || darkMode === "false") {
+    darkMode = JSON.parse(darkMode);
+  } else {
+    darkMode = true;
+  }
+
+  const [theme, setTheme] = useState(darkMode); //on peut y déclarer un str ou un objet (mais faudra l'itérer ensuite)
 
   const toggleTheme = () => {
-    setTheme(!theme)
+    localStorage.setItem('darkMode', JSON.stringify(!theme));
+    setTheme(!theme);
   }
 
   return (

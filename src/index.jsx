@@ -7,11 +7,12 @@ import Home from 'pages/home';
 import About from 'pages/about';
 import Works from 'pages/works';
 import ThemeContextProvider from 'context/ThemeContext';
-import 'sass/style.scss'
-import 'sass/toggle.scss'
+import 'sass/style.scss';
+import 'sass/toggle.scss';
+
 
 const App = () => {
-  
+
   return (
   <Router>
     <ThemeContextProvider>

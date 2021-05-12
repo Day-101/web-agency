@@ -13,10 +13,10 @@ const WorkDetail = () => {
     
     return (
       <>
-      <h2>{data && data.name}</h2>
-      <p>{data && data.description}</p>
-      {console.log(data && data.description)}
-    </>
+        <h2>{data && data.name}</h2>
+        <p>{data && data.description}</p>
+        {console.log(data && data.description)}
+      </>
   );
 };
 
