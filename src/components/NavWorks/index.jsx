@@ -32,7 +32,7 @@ const NavWorks = () => {
   }
 
   return (
-    <main className={theme ? 'contenu light' : 'contenu dark'}>
+    <main className={theme ? 'contenu dark' : 'contenu light'}>
       <nav className="container navWorks">
         <button onClick={() => setCardMode(!cardMode)}>Wahou !</button>
         <ul className={cardMode ? 'card-ON' : 'card-OFF'}>

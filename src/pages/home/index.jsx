@@ -5,7 +5,7 @@ const Home = () => {
 	const {theme} = useContext(ThemeContext);
 
 	return (
-		<main className={theme ? 'contenu light' : 'contenu dark'}>
+		<main className={theme ? 'contenu dark' : 'contenu light'}>
 			<div className="container">
 				<h2>Confiez vos rêves à des experts du Web</h2>
 				<p>Grâce à notre savoir-faire, notre expérience et notre écoute, nous accompagnons nos clients dans la création de site internet: étude, UX, conception, design, développement, SEO.  

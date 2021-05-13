@@ -10,7 +10,7 @@ const WorkDetail = (props) => {
 	const project = require('data/projects.json')[id];
 
 	return (
-    <main className={theme ? 'contenu light' : 'contenu dark'}>
+    <main className={theme ? 'contenu dark' : 'contenu light'}>
       <div className="container layout">
 				<h3>{project.client}</h3>
 				<h2>{project.title}</h2>

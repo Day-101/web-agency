@@ -8,10 +8,10 @@ const Navbar = () => {
   const {theme} = useContext(ThemeContext)
 
   return (
-		<div className={theme ? 'contenu light' : 'contenu dark'}>
+		<div className={theme ? 'contenu dark' : 'contenu light'}>
       <nav className="container navbar">
         <Link to="/">
-          <img id='brand' src={`/images/${theme ? 'pear' : 'pear-neg'}.svg`} alt="" />
+          <img id='brand' src={`/images/${theme ? 'pear-neg' : 'pear'}.svg`} alt="" />
         </Link>
         <ul>
           <li>

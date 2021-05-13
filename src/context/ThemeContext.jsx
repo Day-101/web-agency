@@ -1,16 +1,19 @@
 import React, {createContext, useState} from 'react';
+import { useMediaPredicate } from "react-media-hook";
 
 // création du context
 export const ThemeContext = createContext();
 
 // composant qui va apporter ThemeContext. (props) renvoi à nos composants enfants qu'on englobera
 const ThemeContextProvider = (props) => {
+  let darkModeQuery = useMediaPredicate('(prefers-color-scheme: dark)');
   
   let darkMode = localStorage.getItem('darkMode')
   if (darkMode === "true" || darkMode === "false") {
     darkMode = JSON.parse(darkMode);
   } else {
-    darkMode = true;
+    darkMode = darkModeQuery;
+    console.log(darkMode);
   }
 
   const [theme, setTheme] = useState(darkMode); //on peut y déclarer un str ou un objet (mais faudra l'itérer ensuite)
