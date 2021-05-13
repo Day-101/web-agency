@@ -1,0 +1,33 @@
+.contenu{
+  transition: all 0.5s ease-in-out;
+
+  &.dark{
+  color: $white;
+  background: $dark;
+    
+    a{
+      color: $white;
+      text-decoration: none;
+    }
+  }
+  &.light{
+    color: $dark;
+    background: $white;
+    
+
+    a{
+      color: $dark;
+      
+      &:hover{
+        color: $pure-dark;
+      }
+    }
+  }
+}
+
+.main-content{
+  flex-grow: 1;
+  display: flex;
+}
+
+

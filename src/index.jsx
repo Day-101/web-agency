@@ -8,7 +8,6 @@ import Works from 'pages/works';
 import WorkDetail from 'pages/workdetail'
 import ThemeContextProvider from 'context/ThemeContext';
 import 'sass/style.scss';
-import 'sass/toggle.scss';
 
 const App = () => {
 
@@ -16,7 +15,6 @@ const App = () => {
   <Router>
     <ThemeContextProvider>
         <Navbar />
-        <main className="main-content">
           <Switch>
             <Route path="/" exact>
               <Home />
@@ -31,7 +29,6 @@ const App = () => {
               <WorkDetail />
             </Route>
           </Switch>
-        </main>
     </ThemeContextProvider>
   </Router>
 )};

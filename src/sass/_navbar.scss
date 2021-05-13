@@ -1,0 +1,30 @@
+.navbar{
+	display: flex;
+	padding: .5em 1em;
+
+  img{
+    padding: .5em;
+  }
+
+  #brand{
+    height: 25px;
+  }
+
+  a{
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+  ul{
+    list-style-type: none;
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .btn-toggle{
+    cursor: pointer;
+    height: 25px;
+  }
+}

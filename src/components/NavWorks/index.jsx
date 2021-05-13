@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { useContext, useState } from 'react';
 import {ThemeContext} from 'context/ThemeContext';
+import { Link } from 'react-router-dom';
 
 const NavWorks = () => {
   const {theme} = useContext(ThemeContext)
@@ -11,7 +11,7 @@ const NavWorks = () => {
   }
 
   const projects = require('data/projects.json');
-  const [cardMode, setCardMode] = React.useState(false);
+  const [cardMode, setCardMode] = useState(false);
 
   const loadContent = (project, index) => {
     if (cardMode) {
@@ -32,16 +32,14 @@ const NavWorks = () => {
   }
 
   return (
-    <div className={theme ? 'contenu light' : 'contenu dark'}>
-      <div className="full-width">
-        <nav className="container navWorks">
-          <button onClick={() => setCardMode(!cardMode)}>Wahou !</button>
-          <ul>
-            {projects.map((project, index) => loadContent(project, index))}
-          </ul>
-        </nav>
-      </div>
-    </div>
+    <main className={theme ? 'contenu light' : 'contenu dark'}>
+      <nav className="container navWorks">
+        <button onClick={() => setCardMode(!cardMode)}>Wahou !</button>
+        <ul className={cardMode ? 'card-ON' : 'card-OFF'}>
+          {projects.map((project, index) => loadContent(project, index))}
+        </ul>
+      </nav>
+    </main>
   )
 }
 
