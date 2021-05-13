@@ -17,9 +17,43 @@ main{
   text-align: center;
   flex-grow: 1;
 
+	h3{
+		margin-bottom: 1em;
+		animation: show 1.5s ease-out;
+	}
 	h2{
 		text-align: center;
 		font-size: 2em;
 		margin:0 0 25px 0;
+		animation: showMove 0.8s ease-out;
+	}
+	@keyframes showMove {
+		from {
+			opacity: 0;
+			transform: translateY(-100px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0px);
+		}
+	}
+
+	p{
+		animation: show 1.5s ease-out;
+	}
+}
+
+.illustrations{
+	height: 350px;
+	margin-bottom: 4em;
+	animation: show 1.5s;
+}
+
+@keyframes show {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
 	}
 }
